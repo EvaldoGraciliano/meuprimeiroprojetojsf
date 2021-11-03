@@ -4,13 +4,24 @@
 	 xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title> Mudei </title>
+	<title> Olá jsf </title>
 	
 </h:head>
 
 <h:body>
-	<h:form>
-		<h1>Vai dar tudo certo</h1>
+	<h:form id="formPessoa">
+		
+		
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText> <br/>
+		
+		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}" ></h:inputText> <br/>
+		
+		<h:outputText  value="#{pessoaBean.nomeCompleto}" /> <br/>
+		
+		<h:commandButton value="Mostrar nome" action="#{pessoaBean.mostrarNome}" />  
+		
+		<h:commandButton value="Limpar nome" action="#{pessoaBean.limparNome}" />  
+		
 	
 	
 	</h:form>

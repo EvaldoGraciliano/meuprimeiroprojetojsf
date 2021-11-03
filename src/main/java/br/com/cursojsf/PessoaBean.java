@@ -1,12 +1,38 @@
 package br.com.cursojsf;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean(name = "pessoaBean")
+
 public class PessoaBean {
 
 	private String nome;
 	private String sobrenome;
+	private String nomeCompleto;
+	
+	
+	public String limparNome() {
+		this.nome = "";
+		this.sobrenome = "";
+		return "";
+	}
+	
+	
+	
+	public String mostrarNome() {
+		nomeCompleto = nome + " " +sobrenome;
+		return "";
+	}
+	
+	
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
 
 	public String getNome() {
 		return nome;
