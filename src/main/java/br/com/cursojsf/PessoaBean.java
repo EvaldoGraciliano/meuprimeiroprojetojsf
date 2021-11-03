@@ -1,37 +1,30 @@
 package br.com.cursojsf;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "pessoaBean")
-
+@RequestScoped // padrão
 public class PessoaBean {
 
 	private String nome;
-	private String sobrenome;
-	private String nomeCompleto;
+	private List<String> nomes = new ArrayList<String>();
 	
 	
-	public String limparNome() {
-		this.nome = "";
-		this.sobrenome = "";
+	public String addNome() {
+		nomes.add(nome);
 		return "";
 	}
 	
-	
-	
-	public String mostrarNome() {
-		nomeCompleto = nome + " " +sobrenome;
-		return "";
-	}
-	
-	
-	public String getNomeCompleto() {
-		return nomeCompleto;
+	public List<String> getNomes() {
+		return nomes;
 	}
 
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
+	public void setNomes(List<String> nomes) {
+		this.nomes = nomes;
 	}
 
 	public String getNome() {
@@ -42,12 +35,5 @@ public class PessoaBean {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
 
 }

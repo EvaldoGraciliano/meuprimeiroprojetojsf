@@ -12,15 +12,19 @@
 	<h:form id="formPessoa">
 		
 		
-		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText> <br/>
 		
-		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}" ></h:inputText> <br/>
 		
-		<h:outputText  value="#{pessoaBean.nomeCompleto}" /> <br/>
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText> 
 		
-		<h:commandButton value="Mostrar nome" action="#{pessoaBean.mostrarNome}" />  
 		
-		<h:commandButton value="Limpar nome" action="#{pessoaBean.limparNome}" />  
+		<h:dataTable  value="#{pessoaBean.nomes}" var="nome">
+			<h:column>
+				<h:outputText value="#{nome}" />
+			</h:column>
+		</h:dataTable>
+		
+		
+		<h:commandButton value="Adicionar nome" action="#{pessoaBean.addNome}" />  
 		
 	
 	
